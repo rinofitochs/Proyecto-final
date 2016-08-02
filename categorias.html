@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="proyecto">
+<head>
+	<meta charset="UTF-8">
+	<title>Liga</title>
+
+	<!-- BOOTSTRAP -->
+	<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!--, Angular -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+
+
+</head>
+<body ng-controller="conlista">
+
+   			<!--, cabecera -->
+
+         <div class="container">
+		 	<div class="row">
+		 		<div class="col-xs-12">
+		 			<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="./index.html">LIGA BARRIAL "COLMENA"</a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			        <li class="active"><a href="./index.html">ACERCA DE <span class="sr-only">(current)</span></a></li>
+			         <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORÍA <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="./categorias.php">MAXIMA</a></li>
+			            <li><a href="#">PRIMERA</a></li>
+			            <li><a href="#">SEGUGA</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">SUB 40</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">NIÑOS</a></li>
+			          </ul>
+			        </li>
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CALENDARIO <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			           <li><a href="#">MAXIMA</a></li>
+			            <li><a href="#">PRIMERA</a></li>
+			            <li><a href="#">SEGUGA</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">SUB 40</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">NIÑOS</a></li>
+			          </ul>
+			        </li>
+			      </ul>
+			      <form class="navbar-form navbar-left" role="search">
+
+			        <div class="form-group">
+			          <input type="text" class="form-control" placeholder="Search" ng-model="busqueda">
+			        </div>
+
+			      </form>
+			      <ul class="nav navbar-nav navbar-right">
+			        <li><a href="#">Registrate</a></li>
+			        <li><button type="button" class="btn btn-default navbar-btn">Ingresa</button></li>
+			       
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+		 		</div>
+		 	</div>
+		 </div>
+
+		 <!--, Tabla de categorias -->
+
+		 <div class="container">
+		 	<div class="row">
+		 		<div class="col-xs-12">
+		 			<div class="panel panel-default">
+			          <!-- Default panel contents -->
+						  <div class="panel-heading"><h3>Maxima</h3></div>
+						  <div class="panel-body">
+
+			              </div>
+
+			              <div class="list-group" ng-repeat="equipo in listaequipos | filter:busqueda " >
+									  <a href="#" class="list-group-item" data-toggle="modal" data-target="#myModal" >
+									  {{equipo.nombre}} </a>
+
+									  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+										  <div class="modal-dialog" role="document">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										        <h4 class="modal-title" id="myModalLabel">Equipo</h4>
+										      </div>
+										      <div class="modal-body">
+										        <p>hola {{equipo.nombre}}</p>
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										        
+										      </div>
+										    </div>
+									      </div>
+				                     </div>
+									  
+									 
+						 </div>
+
+		           </div>
+		 		</div>
+		 	</div>
+		 </div>
+		 <!--, footer -->
+
+		 <div class="container">
+         	<div class="row">
+         		<div class="col-xs 12 col-md-6">
+         			<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.tuweb.com/" target="_blank"><img src="https://lh3.googleusercontent.com/-H8xMuAxM-bE/UefWwJr2vwI/AAAAAAAAEdY/N5I41q19KMk/s32-no/facebook.png"></a>
+         			<a href="http://www.twitter.com/home?status=http://www.tuweb.com/" target="_blank"><img src="https://lh5.googleusercontent.com/-xZVxH6CsUaQ/UefWwgi8o3I/AAAAAAAAEdk/reo5XS6z8-8/s32-no/twitter.png"></a>
+         			<a href="https://plus.google.com/share?url=http://www.tuweb.com/" target="_blank"><img src="https://lh5.googleusercontent.com/-5Q7Sj0SXhOA/UefWwcrnZ-I/AAAAAAAAEdg/auK3wqGCbZE/s32-no/googleplus.png"></a>
+         		</div>
+         		<div class="col-xs 12 col-md-6">
+
+         		<h3>NO TE PIERDAS NUESTRAS NOVEDADES</h3>
+					<form id="subscribe-form" action="">
+						<div class="row">
+							<div class="col-xs-7 col-sm-8">
+								<div class="form-group">
+									<label class="sr-only" for="email">tu correo electrónico</label>
+									<input type="text" id="email" name="email" class="form-control input-lg" placeholder="tu correo electrónico">
+								</div>
+							</div>
+							<div class="col-xs-5 col-sm-4">
+								<button class="btn btn-custom btn-lg">SUSCRIBIRME</button>
+							</div>
+						</div>
+					</form>
+         			
+				</div>
+         			
+         		</div>
+
+         	</div>
+         </div>
+
+
+         <!--, Modal Prueba -->
+
+         <!-- Button trigger modal -->
+
+				<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+				  Launch demo modal
+				</button>  -->
+
+				<!-- Modal -->
+				
+
+		
+				
+              
+
+
+         <!--, comandos angular -->
+
+		<script>
+
+		var miapp = angular.module('proyecto',[]);
+		miapp.controller('conlista',['$scope',function($scope){
+
+			$scope.listaequipos=[{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"River",categoria:"Maxima"},{nombre:"Barcelona",categoria:"Maxima"},{nombre:"Jesus del gran Poder",categoria:"Maxima"},{nombre:"Manchester",categoria:"Maxima"},{nombre:"Emelec",categoria:"Maxima"},{nombre:"Quito",categoria:"Maxima"},{nombre:"Independiente",categoria:"Maxima"},{nombre:"Chicago",categoria:"Maxima"},{nombre:"Aucas",categoria:"Maxima"},{nombre:"Riobamba",categoria:"Maxima"},{nombre:"Atucucho",categoria:"Maxima"},{nombre:"Roldos",categoria:"Maxima"},{nombre:"San Carlos",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},{nombre:"Palmeiras",categoria:"Maxima"},]
+
+
+
+		}])
+
+
+		</script>
+
+            <!--, jquery -->
+
+		<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+			               
+	   <!--, javascript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
